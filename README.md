@@ -16,9 +16,9 @@ then delete the epubs from that folder. Then I look for any time references with
 
 `grep -rnI . -e ":0\|:1\|:2\|:3\|:4\|:5" |grep htm |grep -v "{\|;\|uuid\|calibre" |sed -e 's/<[^>]*>//g' |sed G |more`
 
-then manually add each one to the CSV file. This only gets actual time references (like 8:58) but not natural language times (like "half past four"). I'm hoping I can crowdsource those.
+then manually add each one to the CSV file. This only gets actual time references (like 8:58) but not natural language times (like "half past four"). I'm hoping I can crowdsource those - I'll try Reddit first.
 
-Note that right now, the CSV has some stray quotes that aren't scifi/fantasy - I'm working on fixing that, Stay tuned. To create the images, see the instructions below. Once I have this done, I will probably add the images ot the repository so someone can just download them directly.
+Note that right now, the CSV has some stray quotes that aren't scifi/fantasy - I'm working on fixing that, stay tuned. To create the images, see the instructions below. Once I have this done, I will probably add the images ot the repository so someone can just download them directly.
 
 
 
