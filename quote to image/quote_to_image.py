@@ -9,7 +9,7 @@ except ModuleNotFoundError:
     exit(1)
 
 # options (these are constants)
-csvpath = 'litclock_annotated_br2.csv'      # csv file to read quotes from
+csvpath = 'scifi-fantasy.csv'      # csv file to read quotes from
 imgdir = 'images/'                          # save location for images
 imgformat = 'png'                           # format. jpeg is faster but lossy
 include_metadata = True                     # whether to include author/title
