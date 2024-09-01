@@ -20,7 +20,9 @@ then manually add each one to the CSV file. This only gets actual time reference
 
 Note that right now, the CSV has some stray quotes that aren't scifi/fantasy - I'm working on fixing that, stay tuned. To create the images, see the instructions below. Once I have this done, I will probably add the images ot the repository so someone can just download them directly.
 
+---
 
+# From https://github.com/avalonv/literaryclock/tree/main :
 
 # WIP
 
