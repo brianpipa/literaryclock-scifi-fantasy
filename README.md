@@ -1,3 +1,27 @@
+# Scifi-Fantasy Literary Clock
+This builds on the work of others - see info below. I do not take credit for any of this work. 
+My goal here was to make a literary clock that only has scifi and fantasy quotes in it. It's a WIP right now but it's coming along. I have a bunch more books to go through. 
+
+<p align="center">
+<img src="https://github.com/brianpipa/literaryclock-scifi-fantasy/blob/master/images/example-fantasy.jpg" width="400">
+<img src="https://github.com/brianpipa/literaryclock-scifi-fantasy/blob/master/images/example-scifi.jpg" width="400">
+</p>
+
+
+My steps right now are to extract my local epubs with
+
+`find . -name '*.epub' -exec sh -c 'unzip -d "${1%.*}" "$1"' _ {} \;`
+
+then delete the epubs from that folder. Then I look for any time references with this:
+
+`grep -rnI . -e ":0\|:1\|:2\|:3\|:4\|:5" |grep htm |grep -v "{\|;\|uuid\|calibre" |sed -e 's/<[^>]*>//g' |sed G |more`
+
+then manually add each one to the CSV file. This only gets actual time references (like 8:58) but not natural language times (like "half past four"). I'm hoping I can crowdsource those.
+
+Note that right now, the CSV has some stray quotes that aren't scifi/fantasy - I'm working on fixing that, Stay tuned. To create the images, see the instructions below. Once I have this done, I will probably add the images ot the repository so someone can just download them directly.
+
+
+
 # WIP
 
 This is work in progress a fork of https://github.com/elegantalchemist/literaryclock/ with personal modifications.
