@@ -45,10 +45,11 @@ def TurnQuoteIntoImage(index:int, time:str, quote:str, timestring:str,
     # draw the title and author name
     if include_metadata:
         font_mdata = create_fnt(fntname_mdata, fntsize_mdata)
-        metadata = f'—{title.strip()}, {author.strip()}'
+        metadata = f'—{title.strip()}\n{author.strip()}'
         # wrap lines into a reasonable length and lower the maximum height the
         # quote can occupy according to the number of lines the credits use
         if font_mdata.getlength(metadata) > mdatalength:
+            metadata = f'—{title.strip()}, {author.strip()}'
             metadata = wrap_lines(metadata, font_mdata, mdatalength - 30)
         for line in metadata.splitlines():
             mdatastart_y -= font_mdata.getbbox("A")[3] + 4
