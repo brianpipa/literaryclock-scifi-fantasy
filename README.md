@@ -7,7 +7,7 @@ My goal here was to make a literary clock that only has scifi and fantasy quotes
 <img src="https://github.com/brianpipa/literaryclock-scifi-fantasy/blob/master/images/example-scifi.jpg" width="400">
 </p>
 
-Note that right now, the CSV has some stray quotes that aren't scifi/fantasy - I'm working on fixing that, stay tuned. To create the images, see the instructions below. Once I have this done, I will probably add the images ot the repository so someone can just download them directly.
+UPDATE: The CSV now only has scifi/fantasy quotes and almost all times are present (if a time is missing, the previous one shows during the missing minute).
 
 ---
 
