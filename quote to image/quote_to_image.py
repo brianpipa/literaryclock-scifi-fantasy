@@ -9,7 +9,7 @@ except ModuleNotFoundError:
     exit(1)
 
 # options (these are constants)
-csvpath = 'scifi-fantasy.csv'      # csv file to read quotes from
+csvpath = 'scifi-fantasy.csv'               # csv file to read quotes from
 imgdir = 'images/'                          # save location for images
 imgformat = 'png'                           # format. jpeg is faster but lossy
 include_metadata = True                     # whether to include author/title
@@ -20,7 +20,9 @@ color_high = 0                              # black. color for highlighted text
 fntname_norm = 'bookerly.ttf'               # font for normal text
 fntname_high = 'bookerlybold.ttf'           # font for highlighted text
 fntname_mdata = 'baskervilleboldbt.ttf'     # font for the author/title
+fntname_mdata_it = 'baskervillebolditalic.ttf' # font for the author/title
 fntsize_mdata = 25                          # fontsize for the author/title
+fntsize_mdata_small = 20                          # fontsize for the author/title
 # don't touch
 imgnumber = 0
 previoustime = ''
@@ -34,7 +36,7 @@ def TurnQuoteIntoImage(index:int, time:str, quote:str, timestring:str,
     quotelength = 570
     quotestart_y = 0
     quotestart_x = 20
-    mdatalength = 450
+    mdatalength = 570
     mdatastart_y = 785
     mdatastart_x = 585
 
@@ -42,22 +44,32 @@ def TurnQuoteIntoImage(index:int, time:str, quote:str, timestring:str,
     paintedworld = Image.new(mode='L', size=(imgsize), color=color_bg)
     ariandel = ImageDraw.Draw(paintedworld)
 
+    #fonts
+    font_mdata = create_fnt(fntname_mdata, fntsize_mdata)
+    font_mdata_it = create_fnt(fntname_mdata_it, fntsize_mdata)
+    font_mdata_it_small = create_fnt(fntname_mdata_it, fntsize_mdata_small)
+    
     # draw the title and author name
     if include_metadata:
-        font_mdata = create_fnt(fntname_mdata, fntsize_mdata)
-        metadata = f'—{title.strip()}\n{author.strip()}'
-        # wrap lines into a reasonable length and lower the maximum height the
-        # quote can occupy according to the number of lines the credits use
-        if font_mdata.getlength(metadata) > mdatalength:
-            metadata = f'—{title.strip()}, {author.strip()}'
-            metadata = wrap_lines(metadata, font_mdata, mdatalength - 30)
+        metadata = f'{title.strip()}\n—{author.strip()}'
+        # changed to always put title and author o nseprate lines
         for line in metadata.splitlines():
             mdatastart_y -= font_mdata.getbbox("A")[3] + 4
         quoteheight = mdatastart_y - 35
         mdata_y = mdatastart_y
+        mdata_line = 1;
         for line in metadata.splitlines():
-            ariandel.text((mdatastart_x, mdata_y), line, color_high,
-                                                    font_mdata, anchor='rm')
+			#title is italic, author is regular font
+            if mdata_line == 1:
+                title_len = font_mdata_it.getlength(line)
+                #make font smaller if the title is very long
+                if title_len > mdatastart_x:
+                    ariandel.text((mdatastart_x, mdata_y), line, color_high, font_mdata_it_small, anchor='rm')
+                else:
+                    ariandel.text((mdatastart_x, mdata_y), line, color_high, font_mdata_it, anchor='rm')
+                mdata_line = 2
+            else: 
+                ariandel.text((mdatastart_x, mdata_y), line, color_high, font_mdata, anchor='rm')
             mdata_y += font_mdata.getbbox("A")[3] + 4
     else:
         savepath += 'nometadata/'
