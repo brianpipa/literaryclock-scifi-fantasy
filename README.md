@@ -1,13 +1,19 @@
 # Scifi-Fantasy Literary Clock
 This builds on the work of others - see info below. I do not take credit for any of this work. 
-My goal here was to make a literary clock that only has scifi and fantasy quotes in it. 
+My goal here was to make a literary clock that only has scifi and fantasy quotes in it. All quotes are now from fantasy and scifi books. I also made some changes to how the author and title are displayed at the bottom. I htink this looks better.
+
+Some examples displaying on a Kindle:
 
 <p align="center">
-<img src="https://github.com/brianpipa/literaryclock-scifi-fantasy/blob/master/images/example-fantasy.jpg" width="400">
-<img src="https://github.com/brianpipa/literaryclock-scifi-fantasy/blob/master/images/example-scifi.jpg" width="400">
+<img src="https://github.com/brianpipa/literaryclock-scifi-fantasy/blob/master/images/example1.jpg" width="400">
+<img src="https://github.com/brianpipa/literaryclock-scifi-fantasy/blob/master/images/example2.jpg" width="400">
 </p>
 
-UPDATE: The CSV now only has scifi/fantasy quotes and almost all times are present (if a time is missing, the previous one shows during the missing minute).
+Some examples of the raw images:
+<p align="center">
+<img src="https://raw.githubusercontent.com/brianpipa/literaryclock-scifi-fantasy/refs/heads/master/quote%20to%20image/images/quote_0223_0.png" width="400">
+<img src="https://raw.githubusercontent.com/brianpipa/literaryclock-scifi-fantasy/refs/heads/master/quote%20to%20image/images/quote_0751_1.png" width="400">
+</p>
 
 ---
 
