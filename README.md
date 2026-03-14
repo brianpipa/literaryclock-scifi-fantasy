@@ -15,6 +15,7 @@ Some examples of the raw images:
 <img src="https://raw.githubusercontent.com/brianpipa/literaryclock-scifi-fantasy/refs/heads/master/quote%20to%20image/images/quote_0751_1.png" width="400">
 </p>
 
+I've added the time images to the repo so you don't have to run the python script to create them. You can just use the ones I've already created. They are in "quote to image/images"
 ---
 
 # From https://github.com/avalonv/literaryclock/tree/main :
